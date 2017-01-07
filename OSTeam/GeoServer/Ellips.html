@@ -9,13 +9,20 @@
         <form>
             <p><button type="button" onclick="WisCanvas()">Wis</button></p>
             <div class="tussenkop">Ellips</div>
-            <button type="button" onclick="TekenEllipsen()">Teken ellips</button>
+            <button type="button" onclick="TekenEllipsen(45)">Ellips 45</button>
+            <button type="button" onclick="TekenEllipsen(52.15517440)">Amersfoort</button>
             <div class="tekstvelden">
                 <label for="ellips-lange-as">Lange as</label>
                 <input  id="ellips-lange-as" name="ellips-lange-as" type="number" value="320"></input>
                 <br />
                 <label for="ellips-korte-as">Korte as</label>
                 <input  id="ellips-korte-as" name="ellips-korte-as" type="number" value="240"></input>
+            </div>
+            <div class="tussenkop">Normalen</div>
+            <button type="button" onclick="TekenEllipsen()">Normalen</button>
+            <div class="tekstvelden">
+                <label for="ellips-normalen-hoekinterval">Hoekinterval</label>
+                <input  id="ellips-normalen-hoekinterval" name="ellips-normalen-hoekinterval" type="number" value="5"></input>
             </div>
         </form>
     </div>

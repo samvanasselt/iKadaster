@@ -43,10 +43,11 @@ function WisCanvas() { gEllipsCanvas.clearRect(0, 0, 2*Xm, 2*Ym); }
         this.Eindpunt.Draw();
     }
 }
-function cKromme() {
-    var Coordinaten;
-    this.Coordinaten = [];
-}
+{// class cKromme
+    function cKromme() {
+        var Coordinaten;
+        this.Coordinaten = [];
+    }
     cKromme.prototype.Punt = function(pXY) { this.Coordinaten.push(pXY); }
     cKromme.prototype.AantalPunten = function() { return this.Coordinaten.length; }
     cKromme.prototype.TekenKromme = function() {
@@ -59,7 +60,8 @@ function cKromme() {
         gEllipsCanvas.stroke();
         for (var i = 0; i < this.Coordinaten.length; i++) this.Coordinaten[i].Draw();
     }
-{   //  "class" cEllips
+}
+{// class cEllips
     function cEllips(pLangeAs, pKorteAs) {
         var LangeAs;
         var KorteAs;
@@ -72,7 +74,6 @@ function cKromme() {
     cEllips.prototype.X = function(pPhi) { return this.LangeAs * Math.cos(this.t(pPhi)); }
     cEllips.prototype.Y = function(pPhi) { return this.KorteAs * Math.sin(this.t(pPhi)); }
     cEllips.prototype.t = function(pPhi) {
-        // return pPhi * Math.PI / 180.0;
         var lt;
         var tanPhi = 0;
              if (pPhi % 360 ==   0) { lt = 0/2 * Math.PI; }
@@ -88,26 +89,16 @@ function cKromme() {
                 if (tanPhi > 0) lt =     Math.PI + Math.atan(tanPhi * this.KorteAs/this.LangeAs);
                 else            lt = 2 * Math.PI + Math.atan(tanPhi * this.KorteAs/this.LangeAs);
             }
-            // if (pPhi % 360 < 180) {
-                // if (tanPhi > 0) lt =           Math.atan(tanPhi * this.LangeAs/this.KorteAs);
-                // else            lt = Math.PI + Math.atan(tanPhi * this.LangeAs/this.KorteAs);
-            // } else {
-                // if (tanPhi > 0) lt =     Math.PI + Math.atan(tanPhi * this.LangeAs/this.KorteAs);
-                // else            lt = 2 * Math.PI + Math.atan(tanPhi * this.LangeAs/this.KorteAs);
-            // }
         }
         console.log(pPhi, pPhi % 360, tanPhi, lt * 180.0 / Math.PI);
         return lt;
     }
-    // return Math.atan(     Math.tan(pPhi * Math.PI / 180.0) * this.LangeAs/this.KorteAs); }
-    // cEllips.prototype.X = function(pPhi) { return this.LangeAs * Math.cos(pPhi * Math.PI / 180.0); }
-    // cEllips.prototype.Y = function(pPhi) { return this.KorteAs * Math.sin(pPhi * Math.PI / 180.0); }
     cEllips.prototype.VoegPuntToe = function(pPhi) { this.Kromme.Punt(new cXY(this.X(pPhi),this.Y(pPhi))); }
     cEllips.prototype.EllipsPunten = function(pHoekInterval) {
         for (var phi = 0; phi <= 360; phi += pHoekInterval) this.VoegPuntToe(phi);
     }
     cEllips.prototype.TekenEllips = function() { this.Kromme.TekenKromme(); }
-    cEllips.prototype.TekenNormalen = function(pHoekInterval) {
+    cEllips.prototype.TekenNormaal = function(pPhi) {
         var a;
         var b;
         var lEllipsPunt;
@@ -118,12 +109,11 @@ function cKromme() {
         var lXnormaal;
         var lYnormaal;
         var lKader;
-        for (var phi = pHoekInterval; phi < 90; phi += pHoekInterval) {
             a = this.LangeAs;
             b = this.KorteAs;
-            lEllipsPunt = new cXY(this.X(phi),this.Y(phi));
-            lXsnij = (a*a - b*b) / a * Math.cos(this.t(phi));
-            lYsnij = (b*b - a*a) / b * Math.sin(this.t(phi));
+            lEllipsPunt = new cXY(this.X(pPhi),this.Y(pPhi));
+            lXsnij = (a*a - b*b) / a * Math.cos(this.t(pPhi));
+            lYsnij = (b*b - a*a) / b * Math.sin(this.t(pPhi));
             lXsnijpunt  = new cXY( lXsnij,      0);
             lYsnijpunt  = new cXY(      0, lYsnij);
             lXnormaal = new cLijn(lEllipsPunt, lXsnijpunt); lXnormaal.SetKleur('rgb(0,0,255)');
@@ -136,12 +126,36 @@ function cKromme() {
             lXnormaal.TekenLijn();
             lYnormaal.TekenLijn();
             lKader.TekenKromme();
+    }
+    cEllips.prototype.TekenNormalen = function(pHoekInterval) {
+        var a;
+        var b;
+        var lEllipsPunt;
+        var lXsnij;
+        var lYsnij;
+        var lXsnijpunt;
+        var lYsnijpunt;
+        var lXnormaal;
+        var lYnormaal;
+        for (var phi = pHoekInterval; phi < 90; phi += pHoekInterval) {
+            a = this.LangeAs;
+            b = this.KorteAs;
+            lEllipsPunt = new cXY(this.X(phi),this.Y(phi));
+            lXsnij = (a*a - b*b) / a * Math.cos(this.t(phi));
+            lYsnij = (b*b - a*a) / b * Math.sin(this.t(phi));
+            lXsnijpunt  = new cXY( lXsnij,      0);
+            lYsnijpunt  = new cXY(      0, lYsnij);
+            lXnormaal = new cLijn(lEllipsPunt, lXsnijpunt); lXnormaal.SetKleur('rgb(0,0,255)');
+            lYnormaal = new cLijn(lYsnijpunt , lXsnijpunt); lYnormaal.SetKleur('rgb(0,0,255)');
+            lXnormaal.TekenLijn();
+            lYnormaal.TekenLijn();
         }
     }
 }
-function TekenEllipsen() {
+function TekenEllipsen(pPhi = undefined) {
     var a = Number(document.getElementById('ellips-lange-as').value);
     var b = Number(document.getElementById('ellips-korte-as').value);
+    var phiInterval = Number(document.getElementById('ellips-normalen-hoekinterval').value);
     var lXas = new cLijn(new cXY(-a,0), new cXY(a,0));
     var lYas = new cLijn(new cXY(0,-b), new cXY(0,b));
     lEllips = new cEllips(a,b);
@@ -150,5 +164,6 @@ function TekenEllipsen() {
     lXas.TekenLijn();
     lYas.TekenLijn();
     lEllips.TekenEllips();
-    lEllips.TekenNormalen(45);
+    if (pPhi == undefined) lEllips.TekenNormalen(phiInterval);
+    else                   lEllips.TekenNormaal(pPhi);
 }
