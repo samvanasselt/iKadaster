@@ -1,0 +1,24 @@
+<Placemark id="punten.2555">
+    <ExtendedData>
+        <SchemaData schemaUrl="#punten_1">
+            <SimpleData name="blad">339</SimpleData>
+            <SimpleData name="punt">351</SimpleData>
+            <SimpleData name="bladdeel">B</SimpleData>
+            <SimpleData name="uitgavejaarext">2015</SimpleData>
+            <SimpleData name="uitgavevolgext">3</SimpleData>
+            <SimpleData name="benaming">NETPOS-station Apeldoorn</SimpleData>
+            <SimpleData name="ingerekend">ja</SimpleData>
+            <SimpleData name="honum">12</SimpleData>
+            <SimpleData name="beheerinfo">NETPOS-id: ADR2. Rekendossier: 20070202, 20090203, 20140406, 20150802</SimpleData>
+            <SimpleData name="mutatie">2</SimpleData>
+            <SimpleData name="rekendossier">0</SimpleData>
+            <SimpleData name="xrd">194164.0</SimpleData>
+            <SimpleData name="yrd">465894.0</SimpleData>
+            <SimpleData name="gps">1</SimpleData>
+            <SimpleData name="afbeelding">https://rdinfo.kadaster.nl/afbeeldingen/339/339351.jpg</SimpleData>
+        </SchemaData>
+    </ExtendedData>
+    <Point>
+        <coordinates>5.960875677499551,52.17998675762006</coordinates>
+    </Point>
+</Placemark>

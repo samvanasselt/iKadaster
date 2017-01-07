@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Ellipso&iuml;de</title>
+    <link   href="Ellipsoide.css" type="text/css" rel="stylesheet" />
+    <script src ="Ellipsoide.js"   type="text/javascript" ></script>
+</head>
+<body onload="initEllipsCanvas()">
+    <form>
+        <button type="button" onclick="WisCanvas()">Wis</button>
+        <button type="button" onclick="TekenAarde()">Aarde</button>
+        <button type="button" onclick="TekenKubus()">Kubus</button>
+        <button type="button" onclick="TekenAssen()">Assen</button>
+        <label for="kijkhoek-phi">Kijkhoek &phi;</label>
+        <input  id="kijkhoek-phi" name="kijkhoek-phi" type="number" value="0"></input>
+        <label for="kijkhoek-lambda">&lambda;</label>
+        <input  id="kijkhoek-lambda" name="kijkhoek-lambda" type="number" value="0"></input>
+    </form>
+    <hr>
+    <canvas id="ellips"  width="800" height="600">Canvas wordt niet ondersteund door deze browser</canvas>
+</body>
+</html>

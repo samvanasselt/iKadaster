@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="LVB.js"></script>
+</head>
+<body>
+<hr />
+<a href="http://monitoring-plp.cs.kadaster.nl:8000/">Splunk</a>
+<hr />
+<form action="kadaster.html" method="post">
+Server<br />
+<label><input id="KAD-DCA-APP-543" type="radio" value="51" name="LVBserver" checked /> 51 = KAD-DCA-APP-543</label>
+<br />
+<label><input id="KAD-DCA-APP-544" type="radio" value="52" name="LVBserver"  /> 52 = KAD-DCA-APP-544</label>
+<br />
+Request type<br />
+<label><input id="wms" type="radio" value="wms" name="requesttype" checked />WMS</label>
+<br />
+<label><input id="wmts" type="radio" value="wmts" name="requesttype" />WTMS</label>
+<br />
+Request version<br />
+<label><input id="wms1.1.1" type="radio" value="1.1.1" name="requestversion"  /> WMS 1.1.1</label>
+<br />
+<label><input id="WMS1.3.0" type="radio" value="1.3.0" name="requestversion" checked /> WMS 1.3.0</label>
+<br />
+<select id="Jaartal" name="Jaartal">
+<option value="2015">2015</option>
+<option value="2014">2014</option>
+<option value="2013">2013</option>
+<option value="2012">2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2001">2001</option>
+</select>
+<br />
+<button type="button" onclick="sendLVBrequest()">Vraag LVB plaatje op</button>
+</form>
+<hr />
+<script>sendLVBrequest();</script>
+<p id="URLpreview"></p>
+</body>
+</html>

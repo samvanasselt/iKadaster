@@ -1,0 +1,58 @@
+Training                        http://geoserver.geo-solutions.it/edu/en/index.html
+Coordinaat transformaties       http://geoserver.geo-solutions.it/edu/en/adv_gsconfig/crs_handling.html
+INSPIRE                         http://geoserver.geo-solutions.it/edu/en/inspire/status.html#module-inspire.status
+Well Known Text (wikipedia)     https://en.wikipedia.org/wiki/Well-known_text
+RDinfo  (329101 = A'foort)      https://rdinfo.kadaster.nl/
+WKT-2                           http://docs.opengeospatial.org/is/12-063r5/12-063r5.html#table_7
+GDAL tutorial                   http://www.gdal.org/osr_tutorial.html
+Kaartprojecties (ITC)           https://kartoweb.itc.nl/geometrics/index.html
+org.geotools.referencing.CRS    http://docs.geotools.org/stable/userguide/library/referencing/crs.html
+Geotools op GitHub              https://github.com/geotools/geotools/blob/master/modules/library/referencing/src/main/java/org/geotools/referencing/CRS.java
+Geotools WKT parser ?           https://github.com/geotools/geotools/blob/master/modules/library/referencing/src/main/java/org/geotools/referencing/wkt/Parser.java
+
+coordinaat transformaties
+
+ PROJCS["NAD83 / Austin",
+     GEOGCS["NAD83",
+       DATUM["North_American_Datum_1983",
+         SPHEROID["GRS 1980", 6378137.0, 298.257222101],
+         TOWGS84[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+       PRIMEM["Greenwich", 0.0],
+       UNIT["degree", 0.017453292519943295],
+       AXIS["Lon", EAST],
+       AXIS["Lat", NORTH]],
+     PROJECTION["Lambert_Conformal_Conic_2SP"],
+     PARAMETER["central_meridian", -100.333333333333],
+     PARAMETER["latitude_of_origin", 29.6666666666667],
+     PARAMETER["standard_parallel_1", 31.883333333333297],
+     PARAMETER["false_easting", 2296583.333333],
+     PARAMETER["false_northing", 9842500.0],
+     PARAMETER["standard_parallel_2", 30.1166666666667],
+     UNIT["m", 1.0],
+     AXIS["x", EAST],
+     AXIS["y", NORTH],
+     AUTHORITY["EPSG","100002"]]
+
+.. note:: This code sample has been formatted for readability.  The information will need to be provided on a single line instead, or with backslash characters at the end of every line (except the last one).
+
+Van de EPSG site: http://www.epsg-registry.org/export.htm?wkt=urn:ogc:def:crs:EPSG::28992
+
+PROJCRS["Amersfoort / RD New",
+  BASEGEODCRS["Amersfoort",
+    DATUM["Amersfoort",
+      ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1.0]]]],
+  CONVERSION["RD New",
+    METHOD["Oblique Stereographic",ID["EPSG",9809]],
+    PARAMETER["Latitude of natural origin",52.156160555556,ANGLEUNIT["degree",0.01745329252]],
+    PARAMETER["Longitude of natural origin",5.387638888889,ANGLEUNIT["degree",0.01745329252]],
+    PARAMETER["Scale factor at natural origin",0.9999079,SCALEUNIT["unity",1.0]],
+    PARAMETER["False easting",155000,LENGTHUNIT["metre",1.0]],
+    PARAMETER["False northing",463000,LENGTHUNIT["metre",1.0]]],
+  CS[cartesian,2],
+    AXIS["easting (X)",east,ORDER[1]],
+    AXIS["northing (Y)",north,ORDER[2]],
+    LENGTHUNIT["metre",1.0],
+  ID["EPSG",28992]]
+
+https://kartoweb.itc.nl/geometrics/Coordinate%20transformations/coordtrans.html
+

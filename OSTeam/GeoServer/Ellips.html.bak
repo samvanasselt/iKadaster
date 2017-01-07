@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>Ellips</title>
+    <link   href="Ellips.css" type="text/css" rel="stylesheet" />
+    <script src ="Ellips.js"  type="text/javascript" ></script>
+</head>
+<body>
+    <div class="form-left">
+        <form>
+            <p><button type="button" onclick="WisCanvas()">Wis</button></p>
+            <div class="tussenkop">Ellips</div>
+            <button type="button" onclick="TekenEllipsen()">Teken ellips</button>
+            <div class="tekstvelden">
+                <label for="ellips-lange-as">Lange as</label>
+                <input  id="ellips-lange-as" name="ellips-lange-as" type="number" value="320"></input>
+                <br />
+                <label for="ellips-korte-as">Korte as</label>
+                <input  id="ellips-korte-as" name="ellips-korte-as" type="number" value="240"></input>
+            </div>
+        </form>
+    </div>
+    <canvas id="ellips"  width="800" height="600">Canvas wordt niet ondersteund door deze browser</canvas>
+</body>
+</html>

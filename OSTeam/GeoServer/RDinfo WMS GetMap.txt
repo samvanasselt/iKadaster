@@ -1,0 +1,1 @@
+https://geodata.nationaalgeoregister.nl/rdinfo/ows?SERVICE=WMS&version=1.3.0&request=GetMap&srs=EPSG:4326&width=800&height=800&layers=punten&format=image/png&bbox=50.62601129390718,2.9484952898645163,53.595342886582905,7.564549402698164

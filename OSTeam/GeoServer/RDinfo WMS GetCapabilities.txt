@@ -1,0 +1,215 @@
+https://geodata.nationaalgeoregister.nl/rdinfo/ows?SERVICE=WMS&request=GetCapabilities
+
+ETRS89 =?= EPSG:4258
+WGS84  =?= EPSG:4326
+
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3.0" updateSequence="1913" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd">
+<Service>
+<Name>WMS</Name>
+<Title>RD-punten WMS</Title>
+<Abstract>
+Overzicht van de ligging van de RD-punten, GNSS-referentiestations en GNSS-kernnetpunten in Nederland met de bijbehorende omschrijvingen en coordinaten in het stelsel van de Rijksdriehoeksmeting (RD) en het Europese stelsel ETRS-89. Op http://www.kadaster.nl/web/artikel/download/Beschrijving-velden-RDinfo-PDOK-1.htm is uitleg beschikbaar over de inhoud van de velden van deze dataset.
+</Abstract>
+<KeywordList>
+<Keyword>RD-punten</Keyword>
+<Keyword vocabulary="ISO">infoMapAccessService</Keyword>
+</KeywordList>
+<OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/"/>
+<ContactInformation>
+<ContactPersonPrimary>
+<ContactPerson>KlantContactCenter PDOK</ContactPerson>
+<ContactOrganization>PDOK</ContactOrganization>
+</ContactPersonPrimary>
+<ContactPosition>pointOfContact</ContactPosition>
+<ContactAddress>
+<AddressType>Work</AddressType>
+<Address/>
+<City>Apeldoorn</City>
+<StateOrProvince/>
+<PostCode/>
+<Country>Nederland</Country>
+</ContactAddress>
+<ContactVoiceTelephone/>
+<ContactFacsimileTelephone/>
+<ContactElectronicMailAddress>BeheerPDOK@kadaster.nl</ContactElectronicMailAddress>
+</ContactInformation>
+<Fees>NONE</Fees>
+<AccessConstraints>
+otherRestrictions; Geen beperkingen; http://creativecommons.org/publicdomain/zero/1.0/
+</AccessConstraints>
+</Service>
+<Capability>
+<Request>
+<GetCapabilities>
+<Format>text/xml</Format>
+<DCPType>
+<HTTP>
+<Get>
+<OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/rdinfo/ows?SERVICE=WMS&"/>
+</Get>
+<Post>
+<OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/rdinfo/ows?SERVICE=WMS&"/>
+</Post>
+</HTTP>
+</DCPType>
+</GetCapabilities>
+<GetMap>
+<Format>image/png</Format>
+<Format>application/atom+xml</Format>
+<Format>application/pdf</Format>
+<Format>application/rss+xml</Format>
+<Format>application/vnd.google-earth.kml+xml</Format>
+<Format>
+application/vnd.google-earth.kml+xml;mode=networklink
+</Format>
+<Format>application/vnd.google-earth.kmz</Format>
+<Format>image/geotiff</Format>
+<Format>image/geotiff8</Format>
+<Format>image/gif</Format>
+<Format>image/jpeg</Format>
+<Format>image/png; mode=8bit</Format>
+<Format>image/svg+xml</Format>
+<Format>image/tiff</Format>
+<Format>image/tiff8</Format>
+<Format>text/html; subtype=openlayers</Format>
+<DCPType>
+<HTTP>
+<Get>
+<OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/rdinfo/ows?SERVICE=WMS&"/>
+</Get>
+</HTTP>
+</DCPType>
+</GetMap>
+<GetFeatureInfo>
+<Format>text/plain</Format>
+<Format>application/vnd.ogc.gml</Format>
+<Format>text/xml</Format>
+<Format>application/vnd.ogc.gml/3.1.1</Format>
+<Format>text/xml; subtype=gml/3.1.1</Format>
+<Format>text/html</Format>
+<Format>application/json</Format>
+<DCPType>
+<HTTP>
+<Get>
+<OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/rdinfo/ows?SERVICE=WMS&"/>
+</Get>
+</HTTP>
+</DCPType>
+</GetFeatureInfo>
+</Request>
+<Exception>
+<Format>XML</Format>
+<Format>INIMAGE</Format>
+<Format>BLANK</Format>
+</Exception>
+<Layer>
+<Title>RD-punten WMS</Title>
+<Abstract>
+Overzicht van de ligging van de RD-punten, GNSS-referentiestations en GNSS-kernnetpunten in Nederland met de bijbehorende omschrijvingen en coordinaten in het stelsel van de Rijksdriehoeksmeting (RD) en het Europese stelsel ETRS-89. Op http://www.kadaster.nl/web/artikel/download/Beschrijving-velden-RDinfo-PDOK-1.htm is uitleg beschikbaar over de inhoud van de velden van deze dataset.
+</Abstract>
+<!-- Limited list of EPSG projections: -->
+<CRS>EPSG:25831</CRS>
+<CRS>EPSG:25832</CRS>
+<CRS>EPSG:28992</CRS>
+<CRS>EPSG:3034</CRS>
+<CRS>EPSG:3035</CRS>
+<CRS>EPSG:3857</CRS>
+<CRS>EPSG:4258</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>CRS:84</CRS>
+<EX_GeographicBoundingBox>
+<westBoundLongitude>2.9494986434008097</westBoundLongitude>
+<eastBoundLongitude>7.5658080791074385</eastBoundLongitude>
+<southBoundLatitude>50.62610611417526</southBoundLatitude>
+<northBoundLatitude>53.59568065764646</northBoundLatitude>
+</EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.9494986434008097" miny="50.62610611417526" maxx="7.5658080791074385" maxy="53.59568065764646"/>
+<BoundingBox CRS="EPSG:4326" minx="50.62610611417526" miny="2.9494986434008097" maxx="53.59568065764646" maxy="7.5658080791074385"/>
+<BoundingBox CRS="EPSG:4258" minx="50.62610611510005" miny="2.9494986434008097" maxx="53.595680658547096" maxy="7.5658080791074385"/>
+<BoundingBox CRS="EPSG:3035" minx="3060012.420395667" miny="3822969.4761055824" maxx="3410251.5876806118" maxy="4159847.8467861847"/>
+<BoundingBox CRS="EPSG:3034" minx="2655133.7800869304" miny="3518982.1813008212" maxx="2993087.552988237" maxy="3844218.4477937915"/>
+<BoundingBox CRS="EPSG:3857" minx="328336.68707882933" miny="6555420.821499721" maxx="842221.9028058753" maxy="7093951.899231111"/>
+<BoundingBox CRS="EPSG:28992" minx="-17561.19711537339" miny="292874.3828678644" maxx="309082.35600511916" maxy="626017.9115481981"/>
+<BoundingBox CRS="EPSG:25831" minx="496427.9358195531" miny="5608249.031712146" maxx="822882.2776817854" maxy="5948234.616456071"/>
+<BoundingBox CRS="EPSG:25832" minx="72191.4186902187" miny="5609229.342764363" maxx="405083.6926858927" maxy="5955573.447831017"/>
+<AuthorityURL name="PDOK">
+<OnlineResource xlink:type="simple" xlink:href="http://www.pdok.nl"/>
+</AuthorityURL>
+<Layer queryable="1" opaque="0">
+<Name>punten</Name>
+<Title>punten</Title>
+<Abstract>
+Er zijn ongeveer 5600 RD-punten, onderverdeeld in RD-net, GPS-kernnet, AGRS- en NETPOS-stations. Elk RD-punt bestaat uit meerdere stations waarvan de coordinaten in RD en ETRS89 bekend zijn. De gehele publicatie, inclusief geschiedenis van het RD-punt, bestaat uit ruim 47000 stations (lees: records). Van de ongeveer 5600 RD-punten zijn er 435, verspreid over Nederland liggende, GPS-kernnetpunten. Van deze kernnetpunten zijn ook de NAP-hoogte bekend
+</Abstract>
+<KeywordList>
+<Keyword>punten</Keyword>
+<Keyword>features</Keyword>
+</KeywordList>
+<CRS>EPSG:28992</CRS>
+<CRS>CRS:84</CRS>
+<EX_GeographicBoundingBox>
+<westBoundLongitude>2.9495477068026648</westBoundLongitude>
+<eastBoundLongitude>7.565622856910732</eastBoundLongitude>
+<southBoundLatitude>50.62620558108549</southBoundLatitude>
+<northBoundLatitude>53.595536512996645</northBoundLatitude>
+</EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.9495477068026648" miny="50.62620558108549" maxx="7.565622856910732" maxy="53.595536512996645"/>
+<BoundingBox CRS="EPSG:28992" minx="-6549.0479" miny="295392.52" maxx="299221.9131" maxy="623269.73"/>
+<BoundingBox CRS="EPSG:4326" minx="50.62601129390718" miny="2.9484952898645163" maxx="53.595342886582905" maxy="7.564549402698164"/>
+<BoundingBox CRS="EPSG:4258" minx="50.626011294831976" miny="2.9484952898645163" maxx="53.595342887483554" maxy="7.564549402698164"/>
+<BoundingBox CRS="EPSG:3035" minx="3060850.709754173" miny="3833852.1235811403" maxx="3407499.105970297" maxy="4159689.2338450733"/>
+<BoundingBox CRS="EPSG:3034" minx="2655940.3018950177" miny="3529498.495528814" maxx="2990427.3562904582" maxy="3844067.3601473384"/>
+<BoundingBox CRS="EPSG:3857" minx="328224.99427408347" miny="6555404.1826388035" maxx="842081.7875889213" maxy="7093888.543464837"/>
+<BoundingBox CRS="EPSG:25831" minx="496589.2566802662" miny="5608242.442814143" maxx="812938.8464569682" maxy="5946017.199869756"/>
+<BoundingBox CRS="EPSG:25832" minx="83114.79474430607" miny="5609929.746356974" maxx="404955.7513646501" maxy="5952814.1790389735"/>
+<Style>
+<Name>rdinfo:rdinfo_punten</Name>
+<Title>RD Info Punten</Title>
+<Abstract>RD Info Punten</Abstract>
+<LegendURL width="66" height="40">
+<Format>image/png</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/rdinfo/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=punten"/>
+</LegendURL>
+</Style>
+</Layer>
+<Layer queryable="1" opaque="0">
+<Name>stations</Name>
+<Title>stations</Title>
+<Abstract>
+Er zijn ongeveer 5600 RD-punten, onderverdeeld in RD-net, GPS-kernnet, AGRS- en NETPOS-stations. Elk RD-punt bestaat uit meerdere stations waarvan de coordinaten in RD en ETRS89 bekend zijn. De gehele publicatie, inclusief geschiedenis van het RD-punt, bestaat uit ruim 47000 stations (lees: records). Van de ongeveer 5600 RD-punten zijn er 435, verspreid over Nederland liggende, GPS-kernnetpunten. Van deze kernnetpunten zijn ook de NAP-hoogte bekend
+</Abstract>
+<KeywordList>
+<Keyword>stations</Keyword>
+<Keyword>features</Keyword>
+</KeywordList>
+<CRS>EPSG:28992</CRS>
+<CRS>CRS:84</CRS>
+<EX_GeographicBoundingBox>
+<westBoundLongitude>2.9494986434008097</westBoundLongitude>
+<eastBoundLongitude>7.5658080791074385</eastBoundLongitude>
+<southBoundLatitude>50.62610611417526</southBoundLatitude>
+<northBoundLatitude>53.59568065764646</northBoundLatitude>
+</EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="2.9494986434008097" miny="50.62610611417526" maxx="7.5658080791074385" maxy="53.59568065764646"/>
+<BoundingBox CRS="EPSG:28992" minx="-6551.7565" miny="295381.5315" maxx="299233.7042" maxy="623285.7658"/>
+<BoundingBox CRS="EPSG:4326" minx="50.62591182698638" miny="2.9484462266168827" maxx="53.59548703126009" maxy="7.564734623877343"/>
+<BoundingBox CRS="EPSG:4258" minx="50.625911827911175" miny="2.9484462266168827" maxx="53.59548703216073" maxy="7.564734623877343"/>
+<BoundingBox CRS="EPSG:3035" minx="3060839.0029345364" miny="3833848.7383448794" maxx="3407515.28564668" maxy="4159702.0292077265"/>
+<BoundingBox CRS="EPSG:3034" minx="2655929.0014644573" miny="3529495.2265030937" maxx="2990442.98679909" maxy="3844079.713962847"/>
+<BoundingBox CRS="EPSG:3857" minx="328219.53257834027" miny="6555386.728429115" maxx="842102.4063162716" maxy="7093915.580640415"/>
+<BoundingBox CRS="EPSG:25831" minx="496586.0191444524" miny="5608231.379113929" maxx="812950.9897828238" maxy="5946033.634148609"/>
+<BoundingBox CRS="EPSG:25832" minx="83111.55155278055" miny="5609918.198223776" maxx="404968.3302231873" maxy="5952830.354026022"/>
+<Style>
+<Name>rdinfo:rdinfo_stations</Name>
+<Title>RD Info Stations</Title>
+<Abstract>RD Info Stations</Abstract>
+<LegendURL width="20" height="20">
+<Format>image/png</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://geodata.nationaalgeoregister.nl/rdinfo/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stations"/>
+</LegendURL>
+</Style>
+</Layer>
+</Layer>
+</Capability>
+</WMS_Capabilities>

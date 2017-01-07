@@ -1,0 +1,43 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [52.155172	5.387201]
+  },
+  "properties": {
+    "name": "Onze Lieve Vrouwetoren Amersfoort"
+  }
+}
+
+
+
+INSERT INTO "Parcels"("Name", the_geom)
+    VALUES ('Corrected_Shape',
+    ST_TRANSFORM(ST_GeomFromGeoJSON('{
+    "type": "Point"
+    , "coordinates": [52.155172	5.387201]
+    , "crs":{"type":"name","properties":{"name":"EPSG:xxxx"}}
+}'),xxxx));
+
+
+
+CREATE TABLE OST_RD_punten ( ID int4, Naam varchar(100) )
+
+select
+AddGeometryColumn(
+  'public',
+  'OST_RD_punten',
+  'RDpunt',
+  28992,
+  'POINT',
+  2
+)
+
+INSERT INTO "OST_RD_punten" ("ID", "Naam", "RDpunt")
+  VALUES ( 329101, 'Onze Lieve Vrouwetoren Amersfoort', ST_GeomFromText('POINT(155000 463000)',28992)); / 52.155172	5.387201
+
+INSERT INTO "OST_RD_punten" ("ID", "Naam", "RDpunt")
+  VALUES ( 339351, 'NETPOS station Apeldoorn De Brug', ST_GeomFromText('POINT(194164.4935 465894.5006)',28992));  / 52.179798	5.959818
+
+update "OST_RD_punten" set "Naam" = 'NETPOS station Apeldoorn De Brug'
+where "ID" = 339351;

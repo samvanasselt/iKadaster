@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- https://openlayers.org/ -->
+<!-- https://openlayers.org/en/latest/doc/quickstart.html -->
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/TOP10NL.css" />
+    <link rel="stylesheet" type="text/css" href="http://openlayers.org/en/v3.0.0/css/ol.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://openlayers.org/en/v3.19.1/css/ol.css" /> -->
+    <!-- <script type="text/javascript" src="https://openlayers.org/en/v3.19.1/build/ol.js"></script>  -->
+    <script type="text/javascript" src="http://openlayers.org/en/v3.0.0/build/ol.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.3/proj4.js"></script>    
+    <script type="text/javascript" src="js/TOP10NL.js"></script>
+    <title>TOP10NL OpenLayers 3</title>
+  </head>
+  <body>
+    <h2>TOP10NL</h2>
+    <form>
+        <button type="button" onclick="ToonOSM()">Open Street Map</button>
+        <button type="button" onclick="ToonBRT()">BRT</button>
+        <!-- <button type="button" onclick="ToonOSMBRT()">OSM+BRT</button> -->
+    </form>
+    <div id="OSM"     class="map"></div>
+    <div id="BRT"     class="map"></div>
+    <div id="OSM+BRT" class="map"></div>
+  </body>
+</html>
