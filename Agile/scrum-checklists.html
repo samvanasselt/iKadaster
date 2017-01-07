@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>scrum-checklists</title>
+    <link   href="scrum-checklists.css" type="text/css" rel="stylesheet" />
+    <script src ="scrum-checklists.js"  type="text/javascript" ></script>
+</head>
+<body onload="Init()">
+    <div class="floatleft">
+    <form>
+           <input type="checkbox" name="dod-story-definition-of-done" id="dod-story-definition-of-done" data-dod-prompt="Story Definition of Done" class="squaredTwo" onclick="VulDoD();" /><big> Story Definition of Done</big>
+     <br /><input type="checkbox" name="dod-product-owner-tevreden"   id="dod-product-owner-tevreden"   data-dod-prompt="Product Owner tevreden"   class="squaredTwo" onclick="VulDoD();" /><big> Product Owner tevreden</big>
+    </form>
+    </div>
+    <div class="floatleft">
+    <form>
+        <textarea id="dod" name="dod" cols="50" rows="20" ></textarea>
+    </form>
+    </div>
+</body>
+</html>
