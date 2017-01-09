@@ -1,11 +1,13 @@
-.floatleft { float:left; }
-
+.floatleft { float:left; margin:2px; padding:5px; }
+.clear{clear:both; display:block;}
+.vaktekst {vertical-align:middle;}
 /* .squaredTwo */
 .squaredTwo {
+  vertical-align:middle;
   width: 28px;
   height: 28px;
   position: relative;
-  margin: 20px auto;
+  margin: 5px auto;
   background: #fcfff4;
   background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
   box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);

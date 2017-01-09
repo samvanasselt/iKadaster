@@ -6,16 +6,44 @@
     <script src ="scrum-checklists.js"  type="text/javascript" ></script>
 </head>
 <body onload="Init()">
+
+  <div class="clear">
     <div class="floatleft">
-    <form>
-           <input type="checkbox" name="dod-story-definition-of-done" id="dod-story-definition-of-done" data-dod-prompt="Story Definition of Done" class="squaredTwo" onclick="VulDoD();" /><big> Story Definition of Done</big>
-     <br /><input type="checkbox" name="dod-product-owner-tevreden"   id="dod-product-owner-tevreden"   data-dod-prompt="Product Owner tevreden"   class="squaredTwo" onclick="VulDoD();" /><big> Product Owner tevreden</big>
-    </form>
+    <textarea id="dor-tekst" name="dor-tekst" cols="50" rows="20" ></textarea>
     </div>
     <div class="floatleft">
-    <form>
-        <textarea id="dod" name="dod" cols="50" rows="20" ></textarea>
-    </form>
+      <form id="dor-vakjes">
+      <br /><input type="checkbox" name="dor-duidelijk-omschreven" id="dor-duidelijk-omschreven" data-dor-prompt="Voldoende duidelijk" class="squaredTwo" onclick="VulChecklists();" checked /><big> Voldoende duidelijk</big>
+      <br /><input type="checkbox" name="dor-description-volledig" id="dor-description-volledig" data-dor-prompt="Description klopt" class="squaredTwo" onclick="VulChecklists();" checked /><big> Description klopt</big>
+      <br /><input type="checkbox" name="dor-epic-gekoppeld" id="dor-epic-gekoppeld" data-dor-prompt="Epic gekoppeld" class="squaredTwo" onclick="VulChecklists();" checked /><big> Epic gekoppeld</big>
+      <br /><input type="checkbox" name="dor-baten-kosten-analyse" id="dor-baten-kosten-analyse" data-dor-prompt="Baten helder" class="squaredTwo" onclick="VulChecklists();" checked /><big> Baten helder</big>
+      <br /><input type="checkbox" name="dor-business-value" id="dor-business-value" data-dor-prompt="Belang bekend: Business Value" class="squaredTwo" onclick="VulChecklists();" checked /><big> Belang bekend: Business Value</big>
+      <br /><input type="checkbox" name="dor-story-points-toegekend" id="dor-story-points-toegekend" data-dor-prompt="Schatting gemaakt: Story Points" class="squaredTwo" onclick="VulChecklists();" checked /><big> Schatting gemaakt: Story Points</big>
+      <br /><input type="checkbox" name="dor-lvb-scrumteam-concensus" id="dor-lvb-scrumteam-concensus" data-dor-prompt="Concensus" class="squaredTwo" onclick="VulChecklists();" checked /><big> Concensus</big>
+      </form>
     </div>
-</body>
+  </div>
+  <div class="clear">
+    <div class="floatleft">
+    <textarea id="dod-tekst" name="dod-tekst" cols="50" rows="20" ></textarea>
+    </div>
+    <div class="floatleft">
+      <form id="dod-vakjes">
+      <br /><input type="checkbox" name="dod-story-definition-of-done" id="dod-story-definition-of-done" data-dod-prompt="Story Definition of Done" class="squaredTwo" onclick="VulChecklists();" checked /><big> Story Definition of Done</big>
+      <br /><input type="checkbox" name="dod-product-owner-tevreden" id="dod-product-owner-tevreden" data-dod-prompt="Fiat Product Owner" class="squaredTwo" onclick="VulChecklists();" checked /><big> Fiat Product Owner</big>
+      <br /><input type="checkbox" name="dod-review-gehouden" id="dod-review-gehouden" data-dod-prompt="Demo + Review" class="squaredTwo" onclick="VulChecklists();" checked /><big> Demo + Review</big>
+      <br /><input type="checkbox" name="dod-besluiten-geborgd" id="dod-besluiten-geborgd" data-dod-prompt="Besluiten geborgd" class="squaredTwo" onclick="VulChecklists();" checked /><big> Besluiten geborgd</big>
+      <br /><input type="checkbox" name="dod-vervolgacties-backlog" id="dod-vervolgacties-backlog" data-dod-prompt="Vervolgacties gebacklogd" class="squaredTwo" onclick="VulChecklists();" checked /><big> Vervolgacties gebacklogd</big>
+      <br /><input type="checkbox" name="dod-ota-test-succesvol" id="dod-ota-test-succesvol" data-dod-prompt="OTA-Test succesvol" class="squaredTwo" onclick="VulChecklists();" checked /><big> OTA-Test succesvol</big>
+      <br /><input type="checkbox" name="dod-testverslag-naar-po" id="dod-testverslag-naar-po" data-dod-prompt="Testverslag ontvangen" class="squaredTwo" onclick="VulChecklists();" checked /><big> Testverslag ontvangen</big>
+      <br /><input type="checkbox" name="dod-github-bijgewerkt" id="dod-github-bijgewerkt" data-dod-prompt="GitHub gevuld" class="squaredTwo" onclick="VulChecklists();" checked /><big> GitHub gevuld</big>
+      <br /><input type="checkbox" name="dod-documentie-bijgewerkt" id="dod-documentie-bijgewerkt" data-dod-prompt="Documentatie bijgewerkt" class="squaredTwo" onclick="VulChecklists();" checked /><big> Documentatie bijgewerkt</big>
+      <br /><input type="checkbox" name="dod-belanghebbenden-opgeleid" id="dod-belanghebbenden-opgeleid" data-dod-prompt="Belanghebbenden opgeleid" class="squaredTwo" onclick="VulChecklists();" checked /><big> Belanghebbenden opgeleid</big>
+      <br /><input type="checkbox" name="dod-release-gepland" id="dod-release-gepland" data-dod-prompt="Release gepland" class="squaredTwo" onclick="VulChecklists();" checked /><big> Release gepland</big>
+      <br /><input type="checkbox" name="dod-releaseplanning-bekend" id="dod-releaseplanning-bekend" data-dod-prompt="Releaseplanning gecommuniceerd" class="squaredTwo" onclick="VulChecklists();" checked /><big> Releaseplanning gecommuniceerd</big>
+      <br /><input type="checkbox" name="dod-wont-fix" id="dod-wont-fix" data-dod-prompt="Won't Fix" class="squaredTwo" onclick="VulChecklists();" checked /><big> Won't Fix</big>
+      <br /><input type="checkbox" name="dod-lvb-scrumteam-concensus" id="dod-lvb-scrumteam-concensus" data-dod-prompt="Concensus" class="squaredTwo" onclick="VulChecklists();" checked /><big> Concensus</big>
+      </form>
+    </div>
+  </div></body>
 </html>
