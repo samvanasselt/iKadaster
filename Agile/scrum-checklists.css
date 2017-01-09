@@ -1,6 +1,8 @@
 .floatleft { float:left; margin:2px; padding:5px; }
 .clear{clear:both; display:block;}
 .vaktekst {vertical-align:middle;}
+#dor {display:none;}
+#dod {display:none;}
 /* .squaredTwo */
 .squaredTwo {
   vertical-align:middle;

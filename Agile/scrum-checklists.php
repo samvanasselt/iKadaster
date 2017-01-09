@@ -17,28 +17,29 @@
     }
     class cVeld {
         public static $Velden = array();
-        private $Groep;
+        private $Lijst;
         private $Naam;
         private $Prompt;
-        function __construct($pGroep, $pNaam, $pPrompt) {
+        function __construct($pLijst, $pNaam, $pPrompt) {
             self::$Velden[] = $this;
-            $this->Groep  = $pGroep;
+            $this->Lijst  = $pLijst;
             $this->Naam   = $pNaam;
             $this->Prompt = $pPrompt;
         }
-        function InGroep($pGroep) { return $this->Groep == $pGroep; }
+        function InLijst($pLijst) { return $this->Lijst == $pLijst; }
         function GetHTML() {
-            $lPromptID = sprintf('data-%s-prompt', $this->Groep);
+            $lPromptID = sprintf('data-%s-prompt', $this->Lijst);
             $lParams = array();
             $lParams['type'    ] = 'checkbox';
-            $lParams['name'    ] = $this->Groep . '-' . $this->Naam;
-            $lParams['id'      ] = $this->Groep . '-' . $this->Naam;
+            $lParams['name'    ] = $this->Lijst . '-' . $this->Naam;
+            $lParams['id'      ] = $this->Lijst . '-' . $this->Naam;
             $lParams[$lPromptID] = $this->Prompt;
             $lParams['class'   ] = 'squaredTwo';
             $lParams['onclick' ] = 'VulChecklists();';
             $lInput = '<input';
             foreach ($lParams as $kParam => $rParam) $lInput .= sprintf(' %s="%s"', $kParam, $rParam);
-            $lInput .= ' checked />';
+            // $lInput .= ' checked';
+            $lInput .= ' />';
             return sprintf('<br />%s<big> %s</big>', $lInput, $this->Prompt);
         }
     }
@@ -67,14 +68,16 @@
         new cVeld('dod', 'lvb-scrumteam-concensus' , 'Concensus'               );
     }
     function ToonVelden() {
-        foreach (array('dor','dod') as $rGroep) {
-            echoRegel('<div class="clear">');
+        foreach (array('dor','dod') as $rLijst) {
+            echoRegel(sprintf('<div id="%s" class="clear">', $rLijst));
             echoRegel('<div class="floatleft">');
-            echoRegel(sprintf('<textarea id="%s-tekst" name="%s-tekst" cols="50" rows="20" ></textarea>', $rGroep, $rGroep));
+            echoRegel(sprintf('<h2>Definition of %s</h2>', ($rLijst == 'dor') ? 'Ready' : 'Done'));
+            echoRegel(sprintf('<textarea id="%s-tekst" name="%s-tekst" cols="50" rows="20" ></textarea>', $rLijst, $rLijst));
             echoRegel('</div>');
             echoRegel('<div class="floatleft">');
-            echoRegel(sprintf('<form id="%s-vakjes">', $rGroep));
-            foreach (cVeld::$Velden as $rVeld) if ($rVeld->InGroep($rGroep)) echoRegel($rVeld->GetHTML());
+            echoRegel('<h2>Checklist</h2>');
+            echoRegel(sprintf('<form id="%s-vakjes">', $rLijst));
+            foreach (cVeld::$Velden as $rVeld) if ($rVeld->InLijst($rLijst)) echoRegel($rVeld->GetHTML());
             echoRegel('</form>');
             echoRegel('</div>');
             echoRegel('</div>');
