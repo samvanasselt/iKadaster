@@ -1,13 +1,11 @@
-    var lNetwerk;
+//  https://www.youtube.com/watch?v=GazC3A4OQTE
 function cLink(pEindpunt, pAfstand, pTijd) {
     this.Punt    = pEindpunt;
     this.Afstand = pAfstand;
     this.Tijd    = pTijd;
 }
-function cKnooppunt(pPuntnummer, pX, pY, pLinks) {
+function cKnooppunt(pPuntnummer, pLinks) {
     this.Punt       = pPuntnummer;
-    this.X          = pX;
-    this.Y          = pY;
     this.Links      = pLinks;
     this.Bezocht    = false;
     this.Kosten     = Infinity;
@@ -17,8 +15,8 @@ cKnooppunt.prototype.HTMLtableRow = function(nPunten) {
     var lTekst = '';
     var lLinks = '';
     for (var j = 0; j < this.Links.length; j++) {
-        lLinks += ' ' + this.Links[j].Punt; 
-        lLinks += ' (' + this.Links[j].Afstand + ')'; 
+        lLinks += ' ' + this.Links[j].Punt;
+        lLinks += ' (' + this.Links[j].Afstand + ')';
     }
     lTekst += '<tr>';
     lTekst += '<td>' + this.Punt + '</td>';
@@ -37,29 +35,19 @@ function dumpKnooppunten(pPunten) {
     var lTekst = 'Aantal knooppunten = ' + pPunten.length;
     lTekst += '<table>';
     lTekst += '<tr><th>Knooppunt</th><th>Bezocht</th><th>Kosten</th><th>Kruimelpad</th><th>heeft</th><th>Links</th></tr>';
-    for (var i = 0; i < pPunten.length; i++) { lTekst += pPunten[i].HTMLtableRow(16); }
+    for (var i = 0; i < pPunten.length; i++) { lTekst += pPunten[i].HTMLtableRow(6); }
     lTekst += '</table>';
     document.getElementById("knooppunten").innerHTML = lTekst;
     // dump(lTekst);
 }
 function initNetwerk() {
     lNetwerk =
-    [ new cKnooppunt( 0, 0,0, [                                      new cLink( 1,1,1), new cLink( 4,1,1)])
-    , new cKnooppunt( 1, 1,0, [                   new cLink( 0,1,1), new cLink( 2,1,1), new cLink( 5,1,1)])
-    , new cKnooppunt( 2, 2,0, [                   new cLink( 1,1,1), new cLink( 3,1,1), new cLink( 6,1,1)])
-    , new cKnooppunt( 3, 3,0, [                   new cLink( 2,1,1),                    new cLink( 7,1,1)])
-    , new cKnooppunt( 4, 0,1, [new cLink( 0,1,1),                    new cLink( 5,1,1), new cLink( 8,1,1)])
-    , new cKnooppunt( 5, 1,1, [new cLink( 1,1,1), new cLink( 4,1,1), new cLink( 6,1,1), new cLink( 9,1,1)])
-    , new cKnooppunt( 6, 2,1, [new cLink( 2,1,1), new cLink( 5,1,1), new cLink( 7,1,1), new cLink(10,1,1)])
-    , new cKnooppunt( 7, 3,1, [new cLink( 3,1,1), new cLink( 6,1,1),                    new cLink(11,1,1)])
-    , new cKnooppunt( 8, 0,2, [new cLink( 4,1,1),                    new cLink( 9,1,1), new cLink(12,1,1)])
-    , new cKnooppunt( 9, 1,2, [new cLink( 5,1,1), new cLink( 8,1,1), new cLink(10,1,1), new cLink(13,1,1)])
-    , new cKnooppunt(10, 2,2, [new cLink( 6,1,1), new cLink( 9,1,1), new cLink(11,1,1), new cLink(14,1,1)])
-    , new cKnooppunt(11, 3,2, [new cLink( 7,1,1), new cLink(10,1,1),                    new cLink(15,1,1)])
-    , new cKnooppunt(12, 0,3, [new cLink( 8,1,1),                    new cLink(13,1,1)                   ])
-    , new cKnooppunt(13, 1,3, [new cLink( 9,1,1), new cLink(12,1,1), new cLink(14,1,1)                   ])
-    , new cKnooppunt(14, 2,3, [new cLink(10,1,1), new cLink(13,1,1), new cLink(15,1,1)                   ])
-    , new cKnooppunt(15, 3,3, [new cLink(11,1,1), new cLink(14,1,1),                                     ])
+    [ new cKnooppunt(0, [new cLink(1,2,2), new cLink(2,4,4)])
+    , new cKnooppunt(1, [new cLink(2,1,1), new cLink(3,4,4), new cLink(4,2,2)])
+    , new cKnooppunt(2, [new cLink(4,3,3)])
+    , new cKnooppunt(3, [new cLink(5,2,2)])
+    , new cKnooppunt(4, [new cLink(3,3,3), new cLink(5,2,2)])
+    , new cKnooppunt(5, [])
     ];
     return lNetwerk;
 }
@@ -71,7 +59,7 @@ function kortstePad(pKnooppunten, pBeginpunt, pEindpunt) {
     var nBezocht = 0;
     pKnooppunten[pBeginpunt].Kosten  = 0;
     var nIteraties = 0;
-    while (!lGevonden && nBezocht < nPunten && nIteraties++ < 100) {
+    while (!lGevonden && nBezocht < nPunten && nIteraties++ < 8) {
         dumpKnooppunten(pKnooppunten);
         var lNabijpunt = -1;
         var lNabijkosten = Infinity;
@@ -111,7 +99,7 @@ function gevolgdeWeg(pKnooppunten, pBeginpunt, pEindpunt) {
 function voorbeeldKortstePad() {
     document.getElementById("uitvoer").innerHTML = '';
     lKnooppunten = initNetwerk();
-    var shortestPathInfo = kortstePad(lKnooppunten, 5, 15);
+    var shortestPathInfo = kortstePad(lKnooppunten, 0, 5);
     dumpKnooppunten(lKnooppunten);
-    document.getElementById("resultaat").innerHTML = gevolgdeWeg(lKnooppunten, 5, 15);
+    document.getElementById("resultaat").innerHTML = gevolgdeWeg(lKnooppunten, 0, 5);
 }
