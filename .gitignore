@@ -1,5 +1,6 @@
 # iKadaster
 *.bak
+OSTeam/GeoServer/xxx
 
 # Windows image file caches
 Thumbs.db
