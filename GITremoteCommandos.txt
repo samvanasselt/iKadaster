@@ -1,0 +1,2 @@
+git remote add iKadaster https://github.com/samvanasselt/iKadaster.git
+git push -u iKadaster master
